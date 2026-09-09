@@ -8,14 +8,17 @@ body {
 header {
     background-color: #0043a3;
     color: white;
-    padding: 24px;
+    padding: 20px;
     text-align: center;
 }
 
 nav {
     background-color: #ffffff;
-    padding: 12px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding: 16px;
 }
 
 nav a {
@@ -31,28 +34,61 @@ main {
     margin: 24px auto;
 }
 
-section, article {
+section {
     background-color: white;
     padding: 20px;
     margin-bottom: 18px;
-    border: 3px solid white;
     border-radius: 8px;
+}
+
+.container-servicos {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.container-servicos article {
+    background-color: white;
+    padding: 23px;
+    border: 1px solid rgba(221, 221, 221, 0.06);
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 200px;
+    box-sizing: border-box;
+    min-height: 350px;
+}
+
+.container-servicos article h3 {
+    text-align: center;
+}
+
+.container-servicos article p {
+    line-height: 1.6;
+}
+
+.container-servicos article .orientacao {
+    margin-top: auto;
+    align-self: center;
 }
 
 .titulo {
     text-align: center;
 }
 
+.servicosdisponiveis {
+    padding-bottom: 35px;
+}
+
 .servicos {
+    padding-top: 15px;
     text-align: center;
 }
 
 .contato {
     text-align: center;
-}
-
-.informacoes {
-    padding-bottom: 47px;
 }
 
 img {
@@ -96,12 +132,13 @@ footer {
 }
 
 .orientacao {
-    position: relative;
-    top: 12px;
+    display: inline-block;
+    position: static;
+    margin-top: auto;
     font-family: Poppins;
     background-color: #0043a3;
     color: #ffffff;
     border-radius: 10px;
     text-decoration: none;
-    padding: 10px;
+    padding: 10px 15px;
 }
