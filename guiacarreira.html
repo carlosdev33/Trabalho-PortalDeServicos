@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Guia de Carreiras em Tecnologia</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/guiacarreira.css">
+
+    <link rel="icon" href="img/logo-portal.ico">
+</head>
+
+<body>
+
+    <header class="cabecalho-guia">
+
+        <div class="cabecalho-conteudo">
+
+            <span class="etiqueta">Guia de Carreiras</span>
+
+            <h1>
+                Encontre seu caminho na
+                <span>Tecnologia</span>
+            </h1>
+
+            <p>
+                Explore diferentes áreas da Tecnologia, conheça suas
+                características e descubra quais caminhos profissionais você pode explorar.
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- Menu -->
+    <nav class="menu">
+
+        <a href="index.html">Início</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="contato.html">Contato</a>
+
+    </nav>
+
+
+    <main>
+
+        <!-- Introdução -->
+        <section class="introducao">
+
+            <div>
+
+                <span class="numero-secao">01</span>
+
+                <h2>Explore as possibilidades</h2>
+
+                <p>A área de Tecnologia possui diversos caminhos profissionais.
+                Utilize a busca ou os filtros abaixo para conhecer diferentes
+                carreiras e entender quais conhecimentos são importantes
+                para cada área.</p>
+
+            </div>
+
+            <a href="testeperfil.html" class="botao-destaque">
+                Fazer teste de perfil
+            </a>
+
+        </section>
+
+
+        <!-- Busca -->
+        <section class="ferramentas">
+
+            <div class="campo-busca">
+
+                <span class="icone-busca">⌕</span>
+
+                <input type="search" id="buscaCarreira" placeholder="Pesquisar carreira..." autocomplete="off">
+
+            </div>
+
+
+            <div class="filtros" id="filtros">
+
+                <button class="filtro ativo" data-filtro="todos" type="button">
+                Todas
+                </button>
+
+                <button class="filtro" data-filtro="desenvolvimento" type="button">
+                Desenvolvimento
+                </button>
+
+                <button class="filtro" data-filtro="dados" type="button">
+                Dados e IA
+                </button>
+
+                <button class="filtro" data-filtro="seguranca" type="button">
+                Segurança
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Contador -->
+        <div class="resultado-busca">
+
+            <span id="contadorCarreiras">5 carreiras encontradas</span>
+
+        </div>
+
+
+        <!-- Carreiras -->
+        <section class="carreiras" id="listaCarreiras">
+
+
+            <!-- Desenvolvimento Web -->
+            <article
+                class="card-carreira"
+                data-categoria="desenvolvimento"
+                data-nome="Desenvolvimento Web"
+            >
+
+                <div class="card-topo">
+
+                    <div class="icone-carreira">🌐</div>
+
+                    <span class="nivel">
+                        Desenvolvimento
+                    </span>
+
+                </div>
+
+                <h3>Desenvolvimento Web</h3>
+
+                <p>
+                    Criação e manutenção de sites, sistemas e aplicações
+                    acessadas pela internet.
+                </p>
+
+                <div class="habilidades">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+
+                </div>
+
+                <button
+                    class="botao-detalhes"
+                    type="button"
+                    data-carreira="web"
+                >
+                    Ver carreira
+                </button>
+
+            </article>
+
+
+            <!-- Desenvolvimento Mobile -->
+            <article
+                class="card-carreira"
+                data-categoria="desenvolvimento"
+                data-nome="Desenvolvimento Mobile"
+            >
+
+                <div class="card-topo">
+
+                    <div class="icone-carreira">📱</div>
+
+                    <span class="nivel">
+                        Desenvolvimento
+                    </span>
+
+                </div>
+
+                <h3>Desenvolvimento Mobile</h3>
+
+                <p>
+                    Desenvolvimento de aplicativos para dispositivos
+                    móveis e experiências digitais.
+                </p>
+
+                <div class="habilidades">
+
+                    <span>Apps</span>
+                    <span>Dart & Flutter</span>
+                    <span>APIs</span>
+
+                </div>
+
+                <button
+                    class="botao-detalhes"
+                    type="button"
+                    data-carreira="mobile"
+                >
+                    Ver carreira
+                </button>
+
+            </article>
+
+
+            <!-- Análise de Dados -->
+            <article
+                class="card-carreira"
+                data-categoria="dados"
+                data-nome="Análise de Dados"
+            >
+
+                <div class="card-topo">
+
+                    <div class="icone-carreira">📊</div>
+
+                    <span class="nivel">
+                        Dados e IA
+                    </span>
+
+                </div>
+
+                <h3>Análise de Dados</h3>
+
+                <p>
+                    Transformação de dados em informações que podem apoiar
+                    decisões e estratégias.
+                </p>
+
+                <div class="habilidades">
+
+                    <span>Dados</span>
+                    <span>SQL</span>
+                    <span>Dashboards</span>
+
+                </div>
+
+                <button class="botao-detalhes" type="button" data-carreira="dados">
+                Ver carreira
+                </button>
+
+            </article>
+
+
+            <!-- Inteligência Artificial -->
+            <article
+                class="card-carreira"
+                data-categoria="dados"
+                data-nome="Inteligência Artificial"
+            >
+
+                <div class="card-topo">
+
+                    <div class="icone-carreira">🤖</div>
+
+                    <span class="nivel">
+                        Dados e IA
+                    </span>
+
+                </div>
+
+                <h3>Inteligência Artificial</h3>
+
+                <p>Desenvolvimento de soluções capazes de utilizar dados,
+                modelos e algoritmos para resolver problemas.</p>
+
+                <div class="habilidades">
+
+                    <span>Python</span>
+                    <span>IA</span>
+                    <span>Algoritmos</span>
+
+                </div>
+
+                <button class="botao-detalhes" type="button"data-carreira="ia">
+                Ver carreira
+                </button>
+
+            </article>
+
+
+            <!-- Cyber Segurança -->
+            <article
+                class="card-carreira"
+                data-categoria="seguranca"
+                data-nome="Cyber Segurança"
+            >
+
+                <div class="card-topo">
+
+                    <div class="icone-carreira">🔐</div>
+
+                    <span class="nivel">
+                        Segurança
+                    </span>
+
+                </div>
+
+                <h3>Cibersegurança</h3>
+
+                <p>Proteção de sistemas, redes, informações e ambientes
+                digitais contra ameaças.</p>
+
+                <div class="habilidades">
+
+                    <span>Redes</span>
+                    <span>Segurança</span>
+                    <span>Linux</span>
+
+                </div>
+
+                <button class="botao-detalhes" type="button" data-carreira="seguranca">
+                Ver carreira
+                </button>
+
+            </article>
+
+
+        </section>
+
+
+        <!-- Mensagem quando não encontra -->
+        <div class="sem-resultados" id="semResultados">
+
+            <div>🔎</div>
+
+            <h3>Nenhuma carreira encontrada</h3>
+
+            <p>Tente pesquisar por outro termo ou remover os filtros.</p>
+
+        </div>
+
+
+        <!-- Próximo passo -->
+        <section class="proximo-passo">
+
+            <div>
+
+                <span class="numero-secao">02</span>
+
+                <h2>Já encontrou uma área de interesse?</h2>
+
+                <p>O próximo passo é desenvolver seus conhecimentos.
+                Acesse as trilhas de aprendizagem e organize sua
+                evolução por nível.</p>
+
+            </div>
+
+            <a href="cursotrilha.html" class="botao-destaque">
+            Ver trilhas
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- Modal -->
+    <div class="modal" id="modalCarreira" aria-hidden="true">
+
+        <div class="modal-conteudo" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+
+            <button class="fechar-modal" id="fecharModal" type="button" aria-label="Fechar">
+            ×
+            </button>
+
+
+            <div class="modal-icone" id="modalIcone">
+                🌐
+            </div>
+
+            <span class="modal-categoria" id="modalCategoria">
+                Desenvolvimento
+            </span>
+
+            <h2 id="modalTitulo">
+                Desenvolvimento Web
+            </h2>
+
+            <p
+                class="modal-descricao"
+                id="modalDescricao"
+            ></p>
+
+
+            <div class="informacoes-carreira">
+
+                <div class="info">
+
+                    <h3>Responsabilidades</h3>
+
+                    <p id="modalResponsabilidades"></p>
+
+                </div>
+
+
+                <div class="info">
+
+                    <h3>Mercado de trabalho</h3>
+
+                    <p id="modalMercado"></p>
+
+                </div>
+
+
+                <div class="info">
+
+                    <h3>Faixa salarial</h3>
+
+                    <p id="modalSalario"></p>
+
+                </div>
+
+
+                <div class="info">
+
+                    <h3>Tendências</h3>
+
+                    <p id="modalTendencias"></p>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-acoes">
+
+                <a href="cursotrilha.html" class="botao-destaque">
+                Ver trilhas de aprendizagem
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+
+        <p>
+            Trabalho - Projeto - Desenvolvimento de Portal de Serviços -
+            Programação Web - Front-End
+        </p>
+
+    </footer>
+
+
+    <script src="js/guiacarreira.js"></script>
+
+</body>
+
+</html>

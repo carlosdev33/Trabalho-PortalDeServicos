@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teste de Perfil Tecnológico</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/testeperfil.css">
+    <link rel="icon" href="img/logo-portal.ico">
+</head>
+
+<body>
+
+    <main class="teste-container">
+
+        <h1>Teste de Perfil Tecnológico</h1>
+
+        <p class="subtitulo">Responda às perguntas abaixo para descobrir qual área da tecnologia mais combina com seus interesses, habilidades e perfil.</p>
+
+        <div class="pergunta">
+            <h3>1. Você gosta de programar?</h3>
+
+            <label class="opcao">
+                <input type="radio" name="pergunta1" value="sim">Sim
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="pergunta1" value="nao">Não
+            </label>
+        </div>
+
+        <div class="pergunta">
+            <h3>2. Você gosta de criar sites?</h3>
+
+            <label class="opcao">
+                <input type="radio" name="pergunta2" value="sim">Sim
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="pergunta2" value="nao">Não
+            </label>
+        </div>
+
+        <div class="pergunta">
+            <h3>3. Você gosta de resolver problemas?</h3>
+
+            <label class="opcao">
+                <input type="radio" name="pergunta3" value="sim">Sim
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="pergunta3" value="nao">Não
+            </label>
+        </div>
+
+        <div class="botoes-teste">
+
+            <button type="button" class="btn-resultado" onclick="mostrarResultado()">
+            Ver Resultado
+            </button>
+
+        </div>
+
+    </main>
+
+    <div class="resultado" id="resultado">
+
+        <div class="resultado-conteudo">
+
+            <div class="resultado-icone">✓</div>
+
+            <h2>Seu Perfil Tecnológico</h2>
+
+            <p id="textoResultado">Seu resultado aparecerá aqui.</p>
+
+            <button type="button" class="btn-voltar" onclick="window.location.href='guiacarreira.html'">Explorar Carreiras</button>
+
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

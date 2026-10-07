@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cursos e Trilhas de Aprendizagem</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link href="css/estilo.css" rel="stylesheet">
+    <link href="css/cursotrilha.css" rel="stylesheet">
+    <link href="img/logo-portal.ico" rel="icon">
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="cabecalho-cursos">
+        <div class="cabecalho-cursos-conteudo">
+
+            <span class="etiqueta-cursos">
+                Cursos e Trilhas
+            </span>
+
+            <h1>
+                Desenvolva seus conhecimentos em
+                <span>Tecnologia</span>
+            </h1>
+
+            <p>
+                Encontre cursos e trilhas de aprendizagem organizados
+                por área e nível de conhecimento para orientar sua jornada
+                de estudos.
+            </p>
+
+        </div>
+    </header>
+
+
+    <!-- Menu -->
+    <nav class="menu-cursos">
+
+        <a href="index.html">Início</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="contato.html">Contato</a>
+
+    </nav>
+
+
+    <main>
+
+        <!-- Introdução -->
+        <section class="introducao-cursos">
+
+            <div>
+
+                <span class="numero-secao">
+                    01
+                </span>
+
+                <h2>
+                    Encontre o caminho ideal para aprender
+                </h2>
+
+                <p>
+                    Escolha uma área da Tecnologia e encontre cursos
+                    organizados de acordo com o nível de conhecimento.
+                    Você também pode utilizar as trilhas para seguir
+                    uma sequência recomendada de estudos.
+                </p>
+
+            </div>
+
+            <div class="destaque-aprendizado">
+
+                <div class="icone-destaque">
+                    🎓
+                </div>
+
+                <strong>
+                    Aprenda no seu ritmo
+                </strong>
+
+                <span>
+                    Do nível iniciante ao avançado
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- Filtros -->
+        <section class="filtros-cursos">
+
+            <div class="filtro-grupo">
+
+                <h3>
+                    Área de interesse
+                </h3>
+
+                <div class="botoes-filtro">
+
+                    <button
+                        class="filtro-curso ativo"
+                        data-filtro-area="todas"
+                        type="button"
+                    >
+                        Todas
+                    </button>
+
+                    <button
+                        class="filtro-curso"
+                        data-filtro-area="web"
+                        type="button"
+                    >
+                        Desenvolvimento Web
+                    </button>
+
+                    <button
+                        class="filtro-curso"
+                        data-filtro-area="mobile"
+                        type="button"
+                    >
+                        Mobile
+                    </button>
+
+                    <button
+                        class="filtro-curso"
+                        data-filtro-area="dados"
+                        type="button"
+                    >
+                        Dados
+                    </button>
+
+                    <button
+                        class="filtro-curso"
+                        data-filtro-area="ia"
+                        type="button"
+                    >
+                        Inteligência Artificial
+                    </button>
+
+                    <button
+                        class="filtro-curso"
+                        data-filtro-area="seguranca"
+                        type="button"
+                    >
+                        Cyber Segurança
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="filtro-grupo">
+
+                <h3>
+                    Nível
+                </h3>
+
+                <div class="botoes-filtro">
+
+                    <button
+                        class="filtro-nivel ativo"
+                        data-filtro-nivel="todos"
+                        type="button"
+                    >
+                        Todos
+                    </button>
+
+                    <button
+                        class="filtro-nivel"
+                        data-filtro-nivel="iniciante"
+                        type="button"
+                    >
+                        Iniciante
+                    </button>
+
+                    <button
+                        class="filtro-nivel"
+                        data-filtro-nivel="intermediario"
+                        type="button"
+                    >
+                        Intermediário
+                    </button>
+
+                    <button
+                        class="filtro-nivel"
+                        data-filtro-nivel="avancado"
+                        type="button"
+                    >
+                        Avançado
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Resultado -->
+        <div class="resultado-cursos">
+
+            <span id="contadorCursos">
+                10 cursos encontrados
+            </span>
+
+        </div>
+
+
+        <!-- Cursos -->
+        <section class="lista-cursos" id="listaCursos">
+
+            <!-- Curso 1 -->
+            <article
+                class="card-curso"
+                data-area="web"
+                data-nivel="iniciante"
+            >
+
+                <div class="curso-topo">
+
+                    <div class="icone-curso">
+                        🌐
+                    </div>
+
+                    <span class="nivel-curso iniciante">
+                    Iniciante
+                    </span>
+
+                </div>
+
+                <span class="categoria-curso">
+                    Desenvolvimento Web
+                </span>
+
+                <h3>
+                    HTML5
+                </h3>
+
+                <p>
+                    Aprenda os fundamentos do desenvolvimento Web
+                    criando páginas e sites do zero.
+                </p>
+
+                <div class="informacoes-curso">
+
+                    <span>⏱ 40 horas</span>
+                    <span>📚 Online</span>
+
+                </div>
+
+                <button
+                    class="botao-curso"
+                    data-curso="htmlcss"
+                    type="button"
+                >
+                    Ver curso
+                </button>
+
+            </article>
+
+
+            <!-- Curso 2 -->
+            <article
+                class="card-curso"
+                data-area="web"
+                data-nivel="intermediario"
+            >
+
+                <div class="curso-topo">
+
+                    <div class="icone-curso">
+                        💻
+                    </div>
+
+                    <span class="nivel-curso intermediario">
+                    Intermediário
+                    </span>
+
+                </div>
+
+                <span class="categoria-curso">
+                    Desenvolvimento Web
+                </span>
+
+                <h3>
+                    Javascript
+                </h3>
+
+                <p>
+                    Aprenda JavaScript e desenvolva páginas Web
+                    mais interativas e dinâmicas.
+                </p>
+
+                <div class="informacoes-curso">
+
+                    <span>⏱ 40 horas</span>
+                    <span>📚 Online</span>
+
+                </div>
+
+                <button
+                    class="botao-curso"
+                    data-curso="javascript"
+                    type="button"
+                >
+                    Ver curso
+                </button>
+
+            </article>
+
+
+            <!-- Curso 3 -->
+            <article
+                class="card-curso"
+                data-area="mobile"
+                data-nivel="intermediario"
+            >
+
+                <div class="curso-topo">
+
+                    <div class="icone-curso">
+                        📱
+                    </div>
+
+                    <span class="nivel-curso intermediario">
+                        Intermediário
+                    </span>
+
+                </div>
+
+                <span class="categoria-curso">
+                    Desenvolvimento Mobile
+                </span>
+
+                <h3>
+                    Santander Bootcamp | Mobile Developer
+                </h3>
+
+                <p>
+                    Desenvolva conhecimentos para criar aplicações Mobile
+                    e conhecer práticas utilizadas no mercado.
+                </p>
+
+                <div class="informacoes-curso">
+
+                    <span>⏱ 107 horas</span>
+                    <span>📚 Online</span>
+
+                </div>
+
+                <button
+                    class="botao-curso"
+                    data-curso="flutter"
+                    type="button"
+                >
+                    Ver curso
+                </button>
+
+            </article>
+
+
+            <!-- Curso 4 -->
+            <article
+                class="card-curso"
+                data-area="dados"
+                data-nivel="iniciante"
+            >
+
+                <div class="curso-topo">
+
+                    <div class="icone-curso">
+                        📊
+                    </div>
+
+                    <span class="nivel-curso iniciante">
+                        Iniciante
+                    </span>
+
+                </div>
+
+                <span class="categoria-curso">
+                    Análise de Dados
+                </span>
+
+                <h3>
+                    Introdução à Análise de Dados - Microsoft Power BI
+                </h3>
+
+                <p>
+                    Conheça os fundamentos da análise de dados
+                    e utilize o Power BI.
+                </p>
+
+                <div class="informacoes-curso">
+
+                    <span>⏱ 5 horas</span>
+                    <span>📚 Online</span>
+
+                </div>
+
+                <button
+                    class="botao-curso"
+                    data-curso="dados"
+                    type="button"
+                >
+                    Ver curso
+                </button>
+
+            </article>
+
+
+            <!-- Curso 5 -->
+            <article
+                class="card-curso"
+                data-area="dados"
+                data-nivel="iniciante"
+            >
+
+                <div class="curso-topo">
+
+                    <div class="icone-curso">
+                        📈
+                    </div>
+
+                    <span class="nivel-curso iniciante">
+                        Iniciante
+                    </span>
+
+                </div>
+
+                <span class="categoria-curso">
+                    Análise de Dados
+                </span>
+
+                <h3>
+                    Linguagem de Programação Python - Básico
+                </h3>
+
+                <p>
+                    Aprenda os fundamentos da linguagem Python
+                    e desenvolva programas básicos.
+                </p>
+
+                <div class="informacoes-curso">
+
+                    <span>⏱ 18 horas</span>
+                    <span>📚 Online</span>
+
+                </div>
+
+                <button
+                    class="botao-curso"
+                    data-curso="python"
+                    type="button"
+                >
+                    Ver curso
+                </button>
+
+            </article>
+
+
+            <!-- Curso 6 -->
+            <article
+                class="card-curso"
+                data-area="ia"
+                data-nivel="iniciante"
+            >
+
+                <div class="curso-topo">
+
+                    <div class="icone-curso">
+                        🤖
+                    </div>
+
+                    <span class="nivel-curso iniciante">
+                        Iniciante
+                    </span>
+
+                </div>
+
+                <span class="categoria-curso">
+                    Inteligência Artificial
+                </span>
+
+                <h3>
+                    FluêncIA em Inteligência Artificial
+                </h3>
+
+                <p>
+                    Conheça os fundamentos da Inteligência Artificial
+                    Generativa e suas aplicações.
+                </p>
+
+                <div class="informacoes-curso">
+
+                    <span>⏱ 4 horas</span>
+                    <span>📚 Online</span>
+
+                </div>
+
+                <button
+                    class="botao-curso"
+                    data-curso="ia"
+                    type="button"
+                >
+                    Ver curso
+                </button>
+
+            </article>
+
+
+            <!-- Curso 7 -->
+            <article
+                class="card-curso"
+                data-area="ia"
+                data-nivel="iniciante"
+            >
+
+                <div class="curso-topo">
+
+                    <div class="icone-curso">
+                        🧠
+                    </div>
+
+                    <span class="nivel-curso iniciante">
+                        Iniciante
+                    </span>
+
+                </div>
+
+                <span class="categoria-curso">
+                    Inteligência Artificial
+                </span>
+
+                <h3>
+                    AI-900 - Fundamentos de IA no Azure
+                </h3>
+
+                <p>
+                    Aprofunde os fundamentos de Inteligência Artificial
+                    no ecossistema Microsoft Azure.
+                </p>
+
+                <div class="informacoes-curso">
+
+                    <span>⏱ 16 horas</span>
+                    <span>📚 Online</span>
+
+                </div>
+
+                <button
+                    class="botao-curso"
+                    data-curso="machinelearning"
+                    type="button"
+                >
+                    Ver curso
+                </button>
+
+            </article>
+
+        </section>
+
+
+        <!-- Sem resultados -->
+        <section class="sem-cursos" id="semCursos">
+
+            <div>
+                🔎
+            </div>
+
+            <h3>
+                Nenhum curso encontrado
+            </h3>
+
+            <p>
+                Tente selecionar outros filtros para encontrar
+                cursos disponíveis.
+            </p>
+
+        </section>
+
+
+        <!-- Trilhas -->
+        <section class="secao-trilhas">
+
+            <div class="titulo-secao">
+
+                <span class="numero-secao">
+                    02
+                </span>
+
+                <h2>
+                    Trilhas de Aprendizagem
+                </h2>
+
+                <p>
+                    Escolha uma área e siga uma sequência de estudos
+                    para desenvolver seus conhecimentos gradualmente.
+                </p>
+
+            </div>
+
+
+            <div class="trilhas">
+
+                <article class="card-trilha">
+
+                    <div class="icone-trilha">
+                        🌐
+                    </div>
+
+                    <h3>
+                        Trilha Web
+                    </h3>
+
+                    <p>
+                        Aprenda desde os fundamentos de páginas Web
+                        até o desenvolvimento de aplicações.
+                    </p>
+
+                    <div class="etapas-trilha">
+
+                        <span>01 HTML e CSS</span>
+                        <span>02 JavaScript</span>
+                        <span>03 Web Avançado</span>
+
+                    </div>
+
+                    <button
+                        class="botao-trilha"
+                        data-trilha="web"
+                        type="button"
+                    >
+                        Ver trilha
+                    </button>
+
+                </article>
+
+
+                <article class="card-trilha">
+
+                    <div class="icone-trilha">
+                        📊
+                    </div>
+
+                    <h3>
+                        Trilha Dados e IA
+                    </h3>
+
+                    <p>
+                        Construa conhecimentos em análise de dados
+                        e avance para Inteligência Artificial.
+                    </p>
+
+                    <div class="etapas-trilha">
+
+                        <span>01 Análise de Dados</span>
+                        <span>02 Python</span>
+                        <span>03 Machine Learning</span>
+
+                    </div>
+
+                    <button
+                        class="botao-trilha"
+                        data-trilha="dados"
+                        type="button"
+                    >
+                        Ver trilha
+                    </button>
+
+                </article>
+
+
+                <article class="card-trilha">
+
+                    <div class="icone-trilha">
+                        🔐
+                    </div>
+
+                    <h3>
+                        Trilha Cyber Segurança
+                    </h3>
+
+                    <p>
+                        Desenvolva conhecimentos básicos e intermediários
+                        para compreender a área de segurança.
+                    </p>
+
+                    <div class="etapas-trilha">
+
+                        <span>01 Fundamentos</span>
+                        <span>02 Redes</span>
+                        <span>03 Segurança</span>
+
+                    </div>
+
+                    <button
+                        class="botao-trilha"
+                        data-trilha="seguranca"
+                        type="button"
+                    >
+                        Ver trilha
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Próximo passo -->
+        <section class="proximo-passo">
+
+            <div>
+
+                <span class="numero-secao">
+                    03
+                </span>
+
+                <h2>
+                    Ainda não sabe qual área escolher?
+                </h2>
+
+                <p>
+                    Faça o Teste de Perfil Tecnológico e descubra
+                    quais áreas podem combinar com seus interesses
+                    e preferências.
+                </p>
+
+            </div>
+
+            <a
+                class="botao-destaque"
+                href="testeperfil.html"
+            >
+                Fazer teste
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- Modal Curso -->
+    <div
+        aria-hidden="true"
+        class="modal-cursos"
+        id="modalCurso"
+    >
+
+        <div class="modal-curso-conteudo">
+
+            <button
+                aria-label="Fechar"
+                class="fechar-modal-curso"
+                id="fecharModalCurso"
+                type="button"
+            >
+                ×
+            </button>
+
+            <div
+                class="modal-icone"
+                id="modalIconeCurso"
+            >
+                🎓
+            </div>
+
+            <span
+                class="modal-categoria"
+                id="modalCategoriaCurso"
+            >
+                Curso
+            </span>
+
+            <h2 id="modalTituloCurso">
+                Curso
+            </h2>
+
+            <p
+                class="modal-descricao"
+                id="modalDescricaoCurso"
+            >
+            </p>
+
+            <div class="detalhes-curso">
+
+                <div class="detalhe">
+
+                    <strong>
+                        Nível
+                    </strong>
+
+                    <span id="modalNivelCurso">
+                    </span>
+
+                </div>
+
+                <div class="detalhe">
+
+                    <strong>
+                        Duração
+                    </strong>
+
+                    <span id="modalDuracaoCurso">
+                    </span>
+
+                </div>
+
+                <div class="detalhe">
+
+                    <strong>
+                        Modalidade
+                    </strong>
+
+                    <span id="modalModalidadeCurso">
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="conteudo-curso">
+
+                <h3>
+                    O que você aprenderá
+                </h3>
+
+                <p id="modalConteudoCurso">
+                </p>
+
+            </div>
+
+            <button
+                class="botao-modal"
+                id="botaoComecarCurso"
+                type="button"
+            >
+                Começar curso
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Modal Trilha -->
+    <div
+        aria-hidden="true"
+        class="modal-cursos"
+        id="modalTrilha"
+    >
+
+        <div class="modal-curso-conteudo">
+
+            <button
+                aria-label="Fechar"
+                class="fechar-modal-curso"
+                id="fecharModalTrilha"
+                type="button"
+            >
+                ×
+            </button>
+
+            <div
+                class="modal-icone"
+                id="modalIconeTrilha"
+            >
+                🧭
+            </div>
+
+            <span class="modal-categoria">
+                Trilha de Aprendizagem
+            </span>
+
+            <h2 id="modalTituloTrilha">
+                Trilha
+            </h2>
+
+            <p
+                class="modal-descricao"
+                id="modalDescricaoTrilha"
+            >
+            </p>
+
+            <div
+                class="passos-trilha-modal"
+                id="passosTrilha"
+            >
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Rodapé -->
+    <footer>
+
+        <p>
+            Trabalho - Projeto - Desenvolvimento de Portal de Serviços -
+            Programação Web - Front-End
+        </p>
+
+    </footer>
+
+
+    <script src="js/cursotrilha.js"></script>
+
+</body>
+
+</html>
