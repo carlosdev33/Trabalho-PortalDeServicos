@@ -35,7 +35,35 @@ function mostrarResultado() {
     }
 
     janelaResultado.classList.add("ativo");
-
-    // Remove o foco do botão
+    
     document.activeElement.blur();
 }
+
+const servicos = [
+    {
+        nome: "Teste de Perfil Tecnológico",
+        descricao: "Descubra quais áreas da Tecnologia mais combinam com seus interesses, habilidades e preferências.",
+        link: "testeperfil.html"
+    },
+
+    {
+        nome: "Guia de Carreiras em Tecnologia",
+        descricao: "Conheça diferentes carreiras na área de Tecnologia, suas principais funções, mercado de Trabalho, salários e perspectivas profissionais.",
+        link: "guiacarreira.html"
+    },
+
+    {
+        nome: "Cursos e Trilhas de Aprendizagem",
+        descricao: "Receba recomendações de cursos e trilhas de aprendizagem para desenvolver suas habilidades em Tecnologia",
+        link: "cursotrilha.html"
+    }
+];
+
+console.table(servicos);
+
+console.log(servicos[0].nome);
+console.log(servicos[1].descricao);
+
+servicos.forEach((servico) => {
+    console.log(servico.nome);
+});
