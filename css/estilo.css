@@ -42,9 +42,11 @@ section {
 }
 
 .container-servicos {
-    display: flex;
+    display: grid;
+    /* Mantém os cards na mesma grade mesmo quando o filtro retorna apenas um. */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
-    flex-wrap: wrap;
+    align-items: stretch;
 }
 
 .container-servicos article {
@@ -55,10 +57,16 @@ section {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
-    flex: 1;
-    min-width: 200px;
+    width: 100%;
+    min-width: 0;
     box-sizing: border-box;
     min-height: 350px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.container-servicos article:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0, 43, 105, 0.12);
 }
 
 .container-servicos article h3 {
@@ -79,7 +87,196 @@ section {
 }
 
 .servicosdisponiveis {
-    padding-bottom: 35px;
+    padding-bottom: 28px;
+}
+
+.servicosdisponiveis label[for="filtroCategoria"] {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    color: #183653;
+    font-size: 0.93rem;
+    font-weight: 600;
+}
+
+/* Filtro personalizado de categorias */
+.servicosdisponiveis label[for="botaoFiltroCategoria"] {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    color: #183653;
+    font-size: 0.93rem;
+    font-weight: 600;
+}
+
+.filtro-personalizado {
+    position: relative;
+    width: 100%;
+    z-index: 5;
+}
+
+.select-acessivel {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.filtro-seletor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    width: 100%;
+    min-height: 48px;
+    margin: 0;
+    padding: 12px 15px 12px 16px;
+    border: 1px solid #d5e0ef;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #193653;
+    font-family: Poppins, sans-serif;
+    font-size: 0.94rem;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: left;
+    box-shadow: 0 3px 9px rgba(20, 55, 95, 0.06);
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.filtro-seletor:hover {
+    border-color: #8bb4ed;
+    background: #ffffff;
+}
+
+.filtro-seletor:focus-visible,
+.filtro-seletor[aria-expanded="true"] {
+    border-color: #1764c0;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(23, 100, 192, 0.13);
+}
+
+.filtro-seta {
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.2s ease;
+}
+
+.filtro-seletor[aria-expanded="true"] .filtro-seta {
+    transform: rotate(180deg);
+}
+
+.filtro-opcoes {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    z-index: 20;
+    display: grid;
+    gap: 4px;
+    padding: 7px;
+    border: 1px solid #e0e8f2;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 14px 35px rgba(20, 47, 83, 0.17),
+        0 3px 8px rgba(20, 47, 83, 0.06);
+    transform-origin: top center;
+    animation: abrirFiltro 0.16s ease-out;
+}
+
+.filtro-opcoes[hidden] {
+    display: none;
+}
+
+.filtro-opcao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    min-height: 42px;
+    margin: 0;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    background: transparent;
+    color: #28445f;
+    font-family: Poppins, sans-serif;
+    font-size: 0.91rem;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.16s ease, background 0.16s ease,
+        border-color 0.16s ease;
+}
+
+.filtro-opcao:hover,
+.filtro-opcao:focus-visible {
+    border-color: #d8e7fb;
+    background: #edf5ff;
+    color: #064ca8;
+    outline: none;
+}
+
+.filtro-opcao.selecionada {
+    border-color: #d5e6ff;
+    background: #eaf3ff;
+    color: #064ca8;
+    font-weight: 600;
+}
+
+.filtro-opcao svg {
+    flex: 0 0 17px;
+    width: 17px;
+    height: 17px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0;
+}
+
+.filtro-opcao.selecionada svg {
+    opacity: 1;
+}
+
+@keyframes abrirFiltro {
+    from {
+        opacity: 0;
+        transform: translateY(-5px) scale(0.99);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .filtro-opcoes {
+        animation: none;
+    }
+
+    .filtro-seletor,
+    .filtro-seta,
+    .filtro-opcao {
+        transition: none;
+    }
 }
 
 .servicos {
@@ -141,4 +338,373 @@ footer {
     border-radius: 10px;
     text-decoration: none;
     padding: 10px 15px;
+}
+
+#mensagemFiltro {
+    margin: 12px 0 0;
+    color: #52657a;
+    font-size: 0.9rem;
+}
+
+#listaServicos .mensagem-vazia {
+    grid-column: 1 / -1;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 210px;
+    padding: 36px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    background: linear-gradient(135deg, #f4f8ff 0%, #ffffff 100%);
+    border: 1px dashed #b9cce6;
+    border-radius: 16px;
+    color: #183653;
+}
+
+#listaServicos .mensagem-vazia::before {
+    content: "⌕";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 4px;
+    border-radius: 50%;
+    background: #e5efff;
+    color: #1453a3;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+#listaServicos .mensagem-vazia h3 {
+    margin: 0;
+    color: #173d60;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+#listaServicos .mensagem-vazia p {
+    max-width: 520px;
+    margin: 0;
+    color: #60738a;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Ajustes responsivos para manter a grade proporcional. */
+@media (max-width: 800px) {
+    .container-servicos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container-servicos {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .container-servicos article {
+        min-height: auto;
+    }
+
+    #filtroCategoria {
+        min-height: 44px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Painel compacto de filtro na página Serviços */
+.painel-filtro {
+    padding: 14px 18px 12px;
+    margin-bottom: 16px;
+    border: 1px solid #e3eaf3;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(20, 55, 95, 0.045);
+}
+
+.titulo-filtro {
+    margin: 0 0 10px;
+    color: #173d60;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.linha-filtro {
+    display: grid;
+    grid-template-columns: minmax(190px, 300px) minmax(0, 1fr);
+    align-items: center;
+    column-gap: 14px;
+    row-gap: 7px;
+}
+
+.painel-filtro label[for="botaoFiltroCategoria"] {
+    margin: 0 0 6px;
+    color: #52657a;
+    font-size: 0.82rem;
+    font-weight: 500;
+}
+
+.painel-filtro .filtro-personalizado {
+    width: 100%;
+    max-width: 300px;
+}
+
+.painel-filtro .filtro-seletor {
+    min-height: 38px;
+    padding: 8px 11px;
+    gap: 9px;
+    border-radius: 9px;
+    border-color: #dce5f0;
+    background: #ffffff;
+    font-size: 0.86rem;
+    box-shadow: 0 2px 5px rgba(20, 55, 95, 0.045);
+}
+
+.painel-filtro .filtro-seletor:hover {
+    background: #ffffff;
+    border-color: #8bb4ed;
+}
+
+.painel-filtro .filtro-opcoes {
+    border-radius: 11px;
+    padding: 5px;
+    background: #ffffff;
+}
+
+.painel-filtro .filtro-opcao {
+    min-height: 35px;
+    padding: 7px 9px;
+    font-size: 0.84rem;
+}
+
+.painel-filtro #mensagemFiltro {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+@media (max-width: 600px) {
+    .linha-filtro {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 6px;
+    }
+
+    .painel-filtro .filtro-personalizado {
+        max-width: none;
+    }
+}
+
+/* Filtro compacto dentro da área dos cards de serviços */
+.painel-filtro {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin: 0 0 4px;
+    padding: 12px 16px;
+    background: #ffffff;
+    border: 1px solid #e1e8f0;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.linha-filtro {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.linha-filtro label {
+    flex: 0 0 auto;
+    margin: 0;
+    color: #183653;
+    font-size: 0.84rem;
+    font-weight: 500;
+}
+
+.painel-filtro .filtro-personalizado {
+    width: min(250px, 48%);
+}
+
+.painel-filtro .filtro-seletor {
+    min-height: 38px;
+    padding: 8px 11px;
+    border-radius: 8px;
+    background: #ffffff;
+    font-size: 0.84rem;
+}
+
+.painel-filtro #mensagemFiltro {
+    margin: 0 0 0 auto;
+    color: #64748b;
+    font-size: 0.76rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+    .painel-filtro, .linha-filtro {
+        align-items: stretch;
+        flex-direction: column;
+    }
+    .painel-filtro .filtro-personalizado { width: 100%; }
+    .painel-filtro #mensagemFiltro { margin: 0; white-space: normal; }
+}
+
+/* Filtro integrado à área dos cards de serviços */
+
+.catalogo-servicos {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 17px;
+    margin-top: -8px;
+    box-sizing: border-box;
+}
+
+.catalogo-servicos .painel-filtro {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 16px;
+    width: 100%;
+    padding: 0 0 14px;
+    margin: 3 0 18px;
+    border: none;
+    border-bottom: 0px solid #edf1f6;
+    border-radius: 0;
+    box-shadow: none;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.catalogo-servicos #rotuloFiltroCategoria {
+    flex: 0 0 auto;
+    margin: 0;
+    color: #38516d;
+    font-size: 0.91rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.catalogo-servicos .linha-filtro {
+    display: flex;
+    align-items: center;
+    flex: 1 1 300px;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    width: auto;
+    min-width: 0;
+}
+
+.catalogo-servicos .filtro-personalizado {
+    position: relative;
+    flex: 0 1 250px;
+    width: 250px;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.catalogo-servicos .filtro-seletor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    min-height: 38px;
+    padding: 8px 11px;
+    margin: 0;
+    border: 1px solid #dce5f0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #193653;
+    font-family: Poppins, sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.4;
+    box-sizing: border-box;
+    box-shadow: 0 2px 6px rgba(20, 55, 95, 0.06);
+}
+
+.catalogo-servicos .filtro-seletor:hover {
+    background-color: #ffffff;
+    border-color: #8bb4ed;
+}
+
+.catalogo-servicos .filtro-seletor:focus-visible,
+.catalogo-servicos .filtro-seletor[aria-expanded="true"] {
+    outline: none;
+    border-color: #1764c0;
+    box-shadow: 0 0 0 3px rgba(23, 100, 192, 0.12);
+}
+
+.catalogo-servicos .filtro-opcoes {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #e0e8f2;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(20, 47, 83, 0.12);
+    box-sizing: border-box;
+}
+
+.catalogo-servicos .filtro-opcoes[hidden] {
+    display: none;
+}
+
+.catalogo-servicos .filtro-opcao {
+    min-height: 35px;
+    padding: 7px 9px;
+    font-size: 0.82rem;
+}
+
+.catalogo-servicos #mensagemFiltro {
+    flex: 1 1 150px;
+    min-width: 0;
+    margin: 0;
+    color: #718096;
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.catalogo-servicos .container-servicos {
+    margin-top: 0;
+}
+
+@media (max-width: 600px) {
+    .catalogo-servicos {
+        padding: 12px;
+    }
+
+    .catalogo-servicos .painel-filtro {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .catalogo-servicos .linha-filtro {
+        align-items: stretch;
+        flex-direction: column;
+        flex: 1 1 auto;
+        gap: 8px;
+    }
+
+    .catalogo-servicos .filtro-personalizado {
+        width: 100%;
+        max-width: none;
+        flex: 1 1 auto;
+    }
+
+    .catalogo-servicos #mensagemFiltro {
+        flex: 1 1 auto;
+    }
 }
