@@ -43,26 +43,54 @@
                 <label id="rotuloFiltroCategoria" for="botaoFiltroCategoria">Filtrar serviços por categoria:</label>
                 <div class="linha-filtro">
                     <div class="filtro-personalizado" id="filtroPersonalizado">
-                        <select id="filtroCategoria" name="filtroCategoria" class="select-acessivel" tabindex="-1" aria-hidden="true">
+                        <select id="filtroCategoria" name="filtroCategoria" class="select-acessivel" tabindex="-1"
+                            aria-hidden="true">
                             <option value="todos">Todos os serviços</option>
                             <option value="perfil">Perfil tecnológico</option>
                             <option value="carreiras">Carreiras</option>
                             <option value="aprendizagem">Cursos e aprendizagem</option>
                             <option value="outros">Outros serviços (sem resultados)</option>
                         </select>
-                        <button type="button" class="filtro-seletor" id="botaoFiltroCategoria"
-                            aria-labelledby="rotuloFiltroCategoria textoFiltroSelecionado" aria-haspopup="listbox"
-                            aria-expanded="false" aria-controls="opcoesFiltroCategoria">
+                        
+                        <button type="button" class="filtro-seletor" id="botaoFiltroCategoria" aria-labelledby="rotuloFiltroCategoria textoFiltroSelecionado" aria-haspopup="listbox" aria-expanded="false" aria-controls="opcoesFiltroCategoria">
+
                             <span id="textoFiltroSelecionado">Todos os serviços</span>
-                            <svg class="filtro-seta" viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5" /></svg>
+
+                            <svg class="filtro-seta" viewBox="0 0 20 20" aria-hidden="true">
+
+                                <path d="m5 7.5 5 5 5-5" />
+
+                            </svg>
+
                         </button>
+
                         <div class="filtro-opcoes" id="opcoesFiltroCategoria" role="listbox"
                             aria-labelledby="rotuloFiltroCategoria" hidden>
-                            <button type="button" class="filtro-opcao selecionada" role="option" aria-selected="true" data-value="todos"><span>Todos os serviços</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 4 4 8-8" /></svg></button>
-                            <button type="button" class="filtro-opcao" role="option" aria-selected="false" data-value="perfil"><span>Perfil tecnológico</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 4 4 8-8" /></svg></button>
-                            <button type="button" class="filtro-opcao" role="option" aria-selected="false" data-value="carreiras"><span>Carreiras</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 4 4 8-8" /></svg></button>
-                            <button type="button" class="filtro-opcao" role="option" aria-selected="false" data-value="aprendizagem"><span>Cursos e aprendizagem</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 4 4 8-8" /></svg></button>
-                            <button type="button" class="filtro-opcao" role="option" aria-selected="false" data-value="outros"><span>Outros serviços</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 4 4 8-8" /></svg></button>
+                            <button type="button" class="filtro-opcao selecionada" role="option" aria-selected="true"
+                                data-value="todos"><span>Todos os serviços</span><svg viewBox="0 0 20 20"
+                                    aria-hidden="true">
+                                    <path d="m4 10 4 4 8-8" />
+                                </svg></button>
+                            <button type="button" class="filtro-opcao" role="option" aria-selected="false"
+                                data-value="perfil"><span>Perfil tecnológico</span><svg viewBox="0 0 20 20"
+                                    aria-hidden="true">
+                                    <path d="m4 10 4 4 8-8" />
+                                </svg></button>
+                            <button type="button" class="filtro-opcao" role="option" aria-selected="false"
+                                data-value="carreiras"><span>Carreiras</span><svg viewBox="0 0 20 20"
+                                    aria-hidden="true">
+                                    <path d="m4 10 4 4 8-8" />
+                                </svg></button>
+                            <button type="button" class="filtro-opcao" role="option" aria-selected="false"
+                                data-value="aprendizagem"><span>Cursos e aprendizagem</span><svg viewBox="0 0 20 20"
+                                    aria-hidden="true">
+                                    <path d="m4 10 4 4 8-8" />
+                                </svg></button>
+                            <button type="button" class="filtro-opcao" role="option" aria-selected="false"
+                                data-value="outros"><span>Outros serviços</span><svg viewBox="0 0 20 20"
+                                    aria-hidden="true">
+                                    <path d="m4 10 4 4 8-8" />
+                                </svg></button>
                         </div>
                     </div>
                     <p id="mensagemFiltro" aria-live="polite"></p>
