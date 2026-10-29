@@ -51,10 +51,27 @@ function renderizarServicos(lista) {
         return;
     }
 
-    // Cria os cards dos serviços recebidos.
+    // Cria os cards dos serviços recebidos, incluindo a estrela de favorito.
     lista.forEach((servico) => {
         const card = document.createElement("article");
         card.classList.add("card-servico");
+
+        const botaoFavorito = document.createElement("button");
+        botaoFavorito.type = "button";
+        botaoFavorito.className = "botao-favorito";
+        botaoFavorito.dataset.favorito = servico.nome;
+        botaoFavorito.setAttribute("aria-pressed", "false");
+        botaoFavorito.setAttribute(
+            "aria-label",
+            `Marcar ${servico.nome} como favorito`
+        );
+        botaoFavorito.title = "Marcar como favorito";
+
+        const estrela = document.createElement("span");
+        estrela.className = "estrela";
+        estrela.setAttribute("aria-hidden", "true");
+        estrela.textContent = "☆";
+        botaoFavorito.appendChild(estrela);
 
         const titulo = document.createElement("h3");
         titulo.textContent = servico.nome;
@@ -67,9 +84,14 @@ function renderizarServicos(lista) {
         link.href = servico.link;
         link.textContent = servico.textoLink;
 
-        card.append(titulo, descricao, link);
+        card.append(botaoFavorito, titulo, descricao, link);
         listaServicos.appendChild(card);
     });
+
+    // Reaplica o favorito salvo após renderizar ou filtrar os cards.
+    if (typeof window.atualizarEstrelas === "function") {
+        window.atualizarEstrelas(localStorage.getItem("servicoFavorito"));
+    }
 }
 
 const filtroCategoria =
