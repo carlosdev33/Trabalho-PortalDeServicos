@@ -162,15 +162,10 @@ function filtrarServicos() {
     // Atualiza os cards e a mensagem.
     renderizarServicos(servicosFiltrados);
 
-    mensagemFiltro.textContent =
-        servicosFiltrados.length +
-        " serviço encontrado";
-        //" serviço(s) encontrado(s).";
-
-    if (servicosFiltrados.length == 0) {
-        mensagemFiltro.textContent =
-        servicosFiltrados.length +
-        " serviços encontrados";
+    if (servicosFiltrados.length === 1) {
+        mensagemFiltro.textContent = "1 serviço encontrado.";
+    } else {
+        mensagemFiltro.textContent = servicosFiltrados.length + " serviços encontrados.";
     }
 }
 

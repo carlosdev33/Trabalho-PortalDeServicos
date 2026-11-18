@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/projetos.css">
 
     <title>Serviços Oferecidos - Portal de Orientação para Carreiras em Tecnologia</title>
 
@@ -38,31 +38,19 @@
             </p>
         </section>
 
-        <section
-            class="catalogo-servicos"
-            aria-label="Catálogo de serviços">
+        <section class="catalogo-servicos" aria-label="Catálogo de serviços">
 
-            <div
-                class="painel-filtro"
-                aria-label="Filtros de serviços">
+            <div class="painel-filtro" aria-label="Filtros de serviços">
 
-                <label
-                    id="rotuloFiltroCategoria"
-                    for="botaoFiltroCategoria">
+                <label id="rotuloFiltroCategoria" for="botaoFiltroCategoria">
                     Filtrar serviços por categoria:
                 </label>
 
                 <div class="linha-filtro">
 
-                    <div
-                        class="filtro-personalizado"
-                        id="filtroPersonalizado">
+                    <div class="filtro-personalizado" id="filtroPersonalizado">
 
-                        <select
-                            id="filtroCategoria"
-                            name="filtroCategoria"
-                            class="select-acessivel"
-                            tabindex="-1"
+                        <select id="filtroCategoria" name="filtroCategoria" class="select-acessivel" tabindex="-1"
                             aria-hidden="true">
 
                             <option value="todos">Todos os serviços</option>
@@ -72,41 +60,25 @@
                             <option value="outros">Outros serviços (sem resultados)</option>
                         </select>
 
-                        <button
-                            type="button"
-                            class="filtro-seletor"
-                            id="botaoFiltroCategoria"
-                            aria-labelledby="rotuloFiltroCategoria textoFiltroSelecionado"
-                            aria-haspopup="listbox"
-                            aria-expanded="false"
-                            aria-controls="opcoesFiltroCategoria">
+                        <button type="button" class="filtro-seletor" id="botaoFiltroCategoria"
+                            aria-labelledby="rotuloFiltroCategoria textoFiltroSelecionado" aria-haspopup="listbox"
+                            aria-expanded="false" aria-controls="opcoesFiltroCategoria">
 
                             <span id="textoFiltroSelecionado">
                                 Todos os serviços
                             </span>
 
-                            <svg
-                                class="filtro-seta"
-                                viewBox="0 0 20 20"
-                                aria-hidden="true">
+                            <svg class="filtro-seta" viewBox="0 0 20 20" aria-hidden="true">
 
                                 <path d="m5 7.5 5 5 5-5" />
 
                             </svg>
                         </button>
 
-                        <div
-                            class="filtro-opcoes"
-                            id="opcoesFiltroCategoria"
-                            role="listbox"
-                            aria-labelledby="rotuloFiltroCategoria"
-                            hidden>
+                        <div class="filtro-opcoes" id="opcoesFiltroCategoria" role="listbox"
+                            aria-labelledby="rotuloFiltroCategoria" hidden>
 
-                            <button
-                                type="button"
-                                class="filtro-opcao selecionada"
-                                role="option"
-                                aria-selected="true"
+                            <button type="button" class="filtro-opcao selecionada" role="option" aria-selected="true"
                                 data-value="todos">
 
                                 <span>Todos os serviços</span>
@@ -116,11 +88,7 @@
                                 </svg>
                             </button>
 
-                            <button
-                                type="button"
-                                class="filtro-opcao"
-                                role="option"
-                                aria-selected="false"
+                            <button type="button" class="filtro-opcao" role="option" aria-selected="false"
                                 data-value="perfil">
 
                                 <span>Perfil tecnológico</span>
@@ -130,11 +98,7 @@
                                 </svg>
                             </button>
 
-                            <button
-                                type="button"
-                                class="filtro-opcao"
-                                role="option"
-                                aria-selected="false"
+                            <button type="button" class="filtro-opcao" role="option" aria-selected="false"
                                 data-value="carreiras">
 
                                 <span>Carreiras</span>
@@ -144,11 +108,7 @@
                                 </svg>
                             </button>
 
-                            <button
-                                type="button"
-                                class="filtro-opcao"
-                                role="option"
-                                aria-selected="false"
+                            <button type="button" class="filtro-opcao" role="option" aria-selected="false"
                                 data-value="aprendizagem">
 
                                 <span>Cursos e aprendizagem</span>
@@ -158,11 +118,7 @@
                                 </svg>
                             </button>
 
-                            <button
-                                type="button"
-                                class="filtro-opcao"
-                                role="option"
-                                aria-selected="false"
+                            <button type="button" class="filtro-opcao" role="option" aria-selected="false"
                                 data-value="outros">
 
                                 <span>Outros serviços</span>
@@ -181,31 +137,70 @@
             </div>
 
             <!-- Os cards dos serviços são criados pelo js/script.js -->
-            <div
-                class="container-servicos"
-                id="listaServicos"
-                aria-label="Lista de serviços">
+            <div class="container-servicos" id="listaServicos" aria-label="Lista de serviços">
             </div>
+
+        </section>
+
+        <section class="consulta-projetos" id="explorarProjetos" aria-labelledby="tituloExplorarProjetos">
+
+            <h2 id="tituloExplorarProjetos">Explore Projetos de Tecnologia</h2>
+
+            <p>Pesquise linguagens de programação e conheça projetos reais publicados no GitHub.</p>
+
+            <form id="formProjetos" class="form-projetos">
+
+                <div class="campo-pesquisa">
+
+                    <label for="tecnologia">Digite uma linguagem de programação:</label>
+
+                    <div class="entrada-linguagem">
+                        <input type="text" id="tecnologia" name="tecnologia"
+                            placeholder="Ex.: JavaScript, Python, Java ou JS"
+                            autocomplete="off" enterkeyhint="search"
+                            aria-describedby="ajudaLinguagens">
+
+                        <button type="button" class="botao-ajuda-linguagens" id="abrirAjudaLinguagens"
+                            aria-label="Ver linguagens aceitas" aria-haspopup="dialog" aria-controls="popupLinguagens">
+                            <span aria-hidden="true">?</span>
+                        </button>
+                    </div>
+
+                </div>
+
+                <button type="submit" id="btnBuscarProjetos">
+                    Buscar projetos
+                </button>
+
+            </form>
+
+            <p id="statusProjetos" role="status" aria-live="polite"></p>
+
+            <div id="resultadoProjetos" class="grade-projetos" aria-label="Resultados da pesquisa de projetos"></div>
 
         </section>
 
     </main>
 
+    <div id="popupLinguagens" class="popup-linguagens" role="dialog" aria-modal="true"
+        aria-labelledby="tituloPopupLinguagens" aria-hidden="true">
+        <div class="conteudo-popup-linguagens">
+            <button type="button" class="fechar-popup-linguagens" id="fecharAjudaLinguagens"
+                aria-label="Fechar">&times;</button>
+            <div class="icone-popup-linguagens" aria-hidden="true">{ }</div>
+            <h2 id="tituloPopupLinguagens">Linguagens aceitas</h2>
+            <p>Linguagens aceitas: Python, JavaScript, TypeScript, Java, PHP, C, C++, C#, Ruby, Go, Rust, Kotlin e Swift. Abreviações como JS e TS também são aceitas.</p>
+            <button type="button" class="confirmar-popup-linguagens" id="entendiAjudaLinguagens">Entendi</button>
+        </div>
+    </div>
+
     <!-- Pop-up de confirmação do serviço favorito -->
-    <div
-        id="popupFavorito"
-        class="popup-overlay"
-        role="alertdialog"
-        aria-modal="true"
-        aria-labelledby="tituloPopupFavorito"
-        aria-describedby="textoPopupFavorito"
-        aria-hidden="true">
+    <div id="popupFavorito" class="popup-overlay" role="alertdialog" aria-modal="true"
+        aria-labelledby="tituloPopupFavorito" aria-describedby="textoPopupFavorito" aria-hidden="true">
 
         <div class="popup-conteudo">
 
-            <div
-                class="popup-icone-favorito"
-                aria-hidden="true">
+            <div class="popup-icone-favorito" aria-hidden="true">
                 ★
             </div>
 
@@ -215,9 +210,7 @@
 
             <p id="textoPopupFavorito" aria-live="polite"></p>
 
-            <button
-                type="button"
-                id="fecharPopupFavorito">
+            <button type="button" id="fecharPopupFavorito">
                 Entendi
             </button>
 
@@ -233,6 +226,8 @@
 
     <script src="js/script.js"></script>
     <script src="js/favoritos.js"></script>
+    <script src="js/projetos.js"></script>
 
 </body>
+
 </html>
