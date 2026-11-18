@@ -78,51 +78,43 @@ O usuário pode pesquisar tecnologias como Python, Java, JavaScript, TypeScript,
 
 Os resultados apresentam:
 
-- Nome do projeto;
-- Descrição;
+- Nome do repositório;
+- Descrição resumida em português, gerada pelo próprio Portal a partir do nome, da descrição e dos tópicos disponíveis;
 - Linguagem principal;
 - Quantidade de estrelas;
 - Nome do proprietário;
-- Link para acessar o repositório.
+- Link para acessar o repositório no GitHub.
 
-A funcionalidade também disponibiliza a opção de priorizar projetos cujos proprietários informaram localizações brasileiras em seus perfis públicos.
-
-Essa preferência organiza os resultados, apresentando primeiro os projetos com localização brasileira identificada, sem excluir os demais.
+A pesquisa aceita linguagens previamente definidas no Portal e também algumas abreviações, como JS para JavaScript e TS para TypeScript. Os repositórios são ordenados pela quantidade de estrelas e, após a consulta, o JavaScript confere a linguagem informada e apresenta até seis resultados.
 
 ## 🌐 API Utilizada
 
-### GitHub REST API
+### GitHub REST API — Pesquisa de repositórios
 
-A funcionalidade **Explorar Projetos de Tecnologia** utiliza a API pública do GitHub para consultar repositórios e informações dos respectivos proprietários.
+A funcionalidade **Explorar Projetos de Tecnologia** utiliza a API pública do GitHub para pesquisar repositórios conforme a linguagem de programação informada pelo usuário.
 
-**Principais recursos utilizados:**
+**Endpoint utilizado:**
 
-- Pesquisa de repositórios por linguagem de programação;
-- Ordenação dos resultados pela quantidade de estrelas;
-- Consulta de informações públicas dos proprietários;
-- Identificação de localizações brasileiras declaradas nos perfis.
+`https://api.github.com/search/repositories`
 
-**Endpoints utilizados:**
+A consulta envia parâmetros para pesquisar pela linguagem, ordenar os repositórios pela quantidade de estrelas (em ordem decrescente) e limitar a quantidade de itens analisados. A requisição é realizada com `fetch()` e `async/await`. A resposta é interpretada como JSON e os dados recebidos são utilizados para montar os cards de resultados no HTML por meio do DOM.
 
-Pesquisa de repositórios:
+**Tratamentos implementados na pesquisa:**
 
-https://api.github.com/search/repositories
+- Campo vazio ou linguagem não suportada: apresenta uma orientação e não inicia a consulta;
+- Consulta em andamento: apresenta a mensagem “Consultando projetos...”, desabilita temporariamente o botão e sinaliza o estado de carregamento;
+- Resultados encontrados: apresenta até seis repositórios;
+- Nenhum resultado correspondente: informa que nenhum projeto foi encontrado;
+- Falha na requisição ou resposta inesperada: apresenta uma mensagem de erro;
+- Limite de requisições da API: informa que o limite foi atingido e orienta o usuário a tentar novamente mais tarde.
 
-Consulta de perfis de usuários:
+O código também permite cancelar uma pesquisa anterior quando uma nova consulta é iniciada.
 
-https://api.github.com/users/{username}
-
-Consulta de organizações:
-
-https://api.github.com/orgs/{orgname}
-
-A integração utiliza JavaScript com `fetch()`, `async/await` e tratamento de erros para realizar as consultas e apresentar os resultados na página.
+**Importante:** a implementação atual consulta somente o endpoint de pesquisa de repositórios (`/search/repositories`). Ela não realiza consultas adicionais aos endpoints de perfis de usuários (`/users/{username}`) ou de organizações (`/orgs/{orgname}`), nem identifica ou prioriza proprietários por localização.
 
 **Documentação oficial:**
 
-https://docs.github.com/en/rest
-
-**Observação:** a localização informada no perfil é uma informação declarada pelo próprio proprietário e não comprova sua nacionalidade ou o local onde o projeto foi desenvolvido.
+https://docs.github.com/en/rest/search/search#search-repositories
 
 ## 💻 Tecnologias Utilizadas
 
@@ -134,6 +126,18 @@ O projeto foi desenvolvido utilizando tecnologias fundamentais do desenvolviment
 - **Git:** Utilizado para realizar o controle de versão e acompanhar as alterações realizadas durante o desenvolvimento.
 - **GitHub:** Utilizado para armazenar e disponibilizar o código-fonte do projeto, além de fornecer acesso à API utilizada na consulta de projetos de Tecnologia.
 - **GitHub Pages:** Utilizado para publicar o Portal na Internet, permitindo que os usuários acessem suas funcionalidades.
+
+## ⚙️ Funcionalidades e recursos de desenvolvimento
+
+Além das páginas informativas, o Portal possui recursos interativos implementados em JavaScript:
+
+- **Catálogo de serviços:** os serviços são organizados em dados no JavaScript e apresentados dinamicamente na página;
+- **Filtro por categoria:** permite visualizar serviços conforme a categoria selecionada;
+- **Formulário de contato:** utiliza validação dos campos no HTML e no JavaScript, incluindo a remoção de espaços excedentes com `trim()`;
+- **Serviço favorito:** permite selecionar um serviço favorito e mantém essa preferência no `localStorage`, inclusive após atualizar a página;
+- **Pesquisa de projetos:** consulta a GitHub REST API e apresenta repositórios relacionados à linguagem escolhida.
+
+Os scripts JavaScript ficam separados dos arquivos HTML, dentro da pasta `js/`.
 
 ## 🚀 Como o Portal Funciona
 
@@ -179,8 +183,11 @@ A interface utiliza recursos de HTML, CSS e JavaScript para proporcionar uma nav
 3. Localize o arquivo `index.html`.
 4. Execute o projeto utilizando a extensão Live Server ou outro servidor local.
 5. Navegue pelas páginas e teste as funcionalidades disponíveis.
+6. Na página de serviços, teste o filtro por categoria e a seleção de um serviço favorito. Atualize a página para verificar a persistência da preferência.
+7. Na área **Explorar Projetos de Tecnologia**, teste o campo vazio, uma linguagem não suportada e uma linguagem válida. Confira os estados de carregamento, os resultados e as mensagens de erro quando aplicáveis.
+8. Na página de contato, teste o preenchimento e a validação do formulário.
 
-**Observação:** algumas funcionalidades dependem de conexão com a Internet para consultar APIs públicas.
+**Observação:** a pesquisa de projetos depende de conexão com a Internet e da disponibilidade da API pública do GitHub. A API pode limitar temporariamente as requisições.
 
 ## 🌍 Publicação
 
